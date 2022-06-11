@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures=["referentialActions"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id        Int      @id @default(autoincrement())
+  tel String @unique
+  email     String   @unique
+  nom      String?
+  password String?
+  role     String    @default("LIVREUR")
+  createdAt DateTime @default(now())
+}
+model Category {
+   id        Int      @id @default(autoincrement())
+   nameCategory  String? @unique
+   DescProduit  String?
+  iconCategory String?
+    createdAt DateTime @default(now())
+   Produits    Produit[]
+}
+model Produit {
+     id        Int      @id @default(autoincrement())
+ nomProduit  String? 
+ DescProduit String?
+ ImageProduit String? @unique
+ prixProduit  Decimal? 
+ unit String ?
+  createdAt DateTime @default(now()) 
+  CNom  Category?  @relation(fields: [CatNom], references: [nameCategory],onDelete:Cascade )
+     CatNom String?
+}
+model Command {
+       id        Int      @id @default(autoincrement())
+     etat String?  @default("ATTENTE") 
+     cartTotalAmount Decimal ?
+     cartTotalQuantity Decimal?
+     NomClient String?
+     TelClient String?
+     Ville String?
+     Rue String?
+     Zip String?
+     
+     createdAt DateTime @default(now())    
+}
+
+
+
+
+
+

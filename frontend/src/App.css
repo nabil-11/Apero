@@ -1,0 +1,61 @@
+
+.loadingContainer{
+ width: fit-content;
+ border-radius: 10px;
+ padding: 10px;
+ 
+
+}
+.loadingBg{
+  background-color:rgba(0, 0, 0, 0.678) ;
+  height:100vh;
+  display: flex;
+ align-items: center;
+}
+/************categoryIconC*/
+.categoryIconC{
+  overflow: auto;
+  display: flex;
+  padding:5px;
+justify-content: center; 
+align-items: center;
+
+
+ 
+}
+
+/******card **/
+.cardproduit{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+transform: scale(0.95);
+transition-duration: 0.5s;
+border :0px
+}
+.cardproduit:hover{
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;  transform: scale(1);
+  transition-duration: 0.5s;
+ 
+}
+.sidbarIcon{
+  width: 50px;
+  height: 50px;
+ transition-duration: 0.5s;
+}
+.sidbarIcon:hover{
+  width:100px ;
+  height:100px;
+  transition-duration: 0.5s;
+
+}
+.categoryIcon {
+  transform: scale(0.9);
+  transition-duration: 0.5s;
+
+}
+.categoryIcon:hover{
+  transform: scale(1);
+  transition-duration: 0.5s;
+
+}
+
+
